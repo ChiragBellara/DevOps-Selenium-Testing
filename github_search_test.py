@@ -3,11 +3,7 @@
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-#from selenium.webdriver.firefox.options import Options
 
-
-# options = Options()
-# options.headless = True
 
 class GithubSearchTest(unittest.TestCase):
 
@@ -22,6 +18,7 @@ class GithubSearchTest(unittest.TestCase):
         search_box = driver.find_element_by_name("q")
         search_box.click()
         search_box.send_keys(Keys.RETURN)
+        driver.save_screenshot('test_github_repo_search_without_criteria.png')
         #assert "Search more than" in driver.page_source
 
 
@@ -30,8 +27,9 @@ class GithubSearchTest(unittest.TestCase):
         driver.get(self.base_url)
         search_box = driver.find_element_by_name("q")
         search_box.click()
-        search_box.send_keys("selenium")
+        search_box.send_keys("Recommendation System")
         search_box.send_keys(Keys.RETURN)
+        driver.save_screenshot('test_github_repo_search_for_selenium.png')
         #assert "We’ve found" in driver.page_source
 
 
@@ -40,8 +38,9 @@ class GithubSearchTest(unittest.TestCase):
         driver.get(self.base_url)
         search_box = driver.find_element_by_name("q")
         search_box.click()
-        search_box.send_keys("?*#^^%")
+        search_box.send_keys("?*#^*^%")
         search_box.send_keys(Keys.RETURN)
+        driver.save_screenshot('test_github_repo_search_with_invalid_string.png')
         #assert "Your query contains a character that is ignored"  in driver.page_source
 
 
