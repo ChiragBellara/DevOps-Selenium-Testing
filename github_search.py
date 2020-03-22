@@ -1,7 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
 
-driver = webdriver.PhantomJS()
+options = Options()
+options.headless = True
+
+driver = webdriver.Firefox(options=options)
 driver.get("https://github.com")
 search_field  = driver.find_element_by_name("q")
 search_field.click()

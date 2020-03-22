@@ -3,11 +3,16 @@
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
+
+
+options = Options()
+options.headless = True
 
 class GithubSearchTest(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.PhantomJS()
+        self.driver = webdriver.Firefox(options=options)
         self.base_url = "https://github.com"
 
 
