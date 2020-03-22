@@ -3,16 +3,16 @@
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.firefox.options import Options
+#from selenium.webdriver.firefox.options import Options
 
 
-options = Options()
-options.headless = True
+# options = Options()
+# options.headless = True
 
 class GithubSearchTest(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Firefox(options=options)
+        self.driver = webdriver.Firefox()
         self.base_url = "https://github.com"
 
 
