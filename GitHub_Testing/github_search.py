@@ -1,12 +1,5 @@
-# -*- coding: UTF-8 -*-
-
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-#from selenium.webdriver.firefox.options import Options
-
-# options = Options()
-# options.headless = True
-# options=options
 
 driver = webdriver.Firefox()
 driver.get("https://github.com")

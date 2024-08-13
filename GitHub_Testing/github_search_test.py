@@ -1,5 +1,3 @@
-# -*- coding: UTF-8 -*-
-
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -18,7 +16,7 @@ class GithubSearchTest(unittest.TestCase):
         search_box = driver.find_element_by_name("q")
         search_box.click()
         search_box.send_keys(Keys.RETURN)
-        driver.save_screenshot('test_github_repo_search_without_criteria.png')
+        driver.save_screenshot('Outputs/test_github_repo_search_without_criteria.png')
         #assert "Search more than" in driver.page_source
 
 
@@ -29,7 +27,7 @@ class GithubSearchTest(unittest.TestCase):
         search_box.click()
         search_box.send_keys("Recommendation System")
         search_box.send_keys(Keys.RETURN)
-        driver.save_screenshot('test_github_repo_search_for_selenium.png')
+        driver.save_screenshot('Outputs/test_github_repo_search_for_selenium.png')
         #assert "We’ve found" in driver.page_source
 
 
@@ -40,7 +38,7 @@ class GithubSearchTest(unittest.TestCase):
         search_box.click()
         search_box.send_keys("?*#^*^%")
         search_box.send_keys(Keys.RETURN)
-        driver.save_screenshot('test_github_repo_search_with_invalid_string.png')
+        driver.save_screenshot('Outputs/test_github_repo_search_with_invalid_string.png')
         #assert "Your query contains a character that is ignored"  in driver.page_source
 
 

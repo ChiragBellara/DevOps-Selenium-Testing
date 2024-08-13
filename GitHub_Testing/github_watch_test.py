@@ -1,12 +1,6 @@
-# -*- coding: UTF-8 -*-
-
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-#from selenium.webdriver.firefox.options import Options
-
-# options = Options()
-# options.headless = True
 
 class GithubWatchRepoTest(unittest.TestCase):
 
@@ -20,7 +14,7 @@ class GithubWatchRepoTest(unittest.TestCase):
         driver = self.driver
         driver.get("{0}/SeleniumHQ/selenium".format(self.base_url))
         watch_button = driver.find_element_by_partial_link_text(u"Watch").click()
-        driver.save_screenshot('test_github_watch_repo_annonymous_user_redirects_to_login.png')
+        driver.save_screenshot('Outputs/test_github_watch_repo_annonymous_user_redirects_to_login.png')
         #assert login_url == driver.current_url
 
 
